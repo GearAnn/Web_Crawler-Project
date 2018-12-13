@@ -1,0 +1,50 @@
+
+介绍：
+在爬虫基础中我们学会了如何获得网站的信息和如何通过程序登录网站；
+现在我们要利用3种方法来提取获得的网站信息。
+
+三种方法来提取信息：
+
+1.正则表达式解析:
+    (1)正则匹配；用来匹配具有相同规则的字符串；
+    (2)正则替换；用来替换一些字符串.
+
+
+2.bs4：  from bs4 import BeautifulSoup
+  这个需要安装 bs4 和 lxml 库，需要把PIP源修改为国内源,阿里源:
+    Windows 修改国内源的操作步奏：
+    1.文档地址清空后输入 %appdata%
+    2.然后新建一个pip文件夹，然后创建一个文件 pip.ini
+    3.编辑pip.ini内容自行百度
+
+    Linux 修改国内源的操作步奏：
+    1. cd ~
+    2. mkdir ~/.pip
+    3. vi ~/.pip/pip.conf
+    4. 编辑内容
+
+  bs4功能:
+    可以把一个html文件，转化为指定对象，然后通过对象方法和属性去查找指定内容
+        转化本地文件：
+            soup = BeautifulSoup(open('本地文件'),encoding='utf8'),'lxml')
+        转化网络文件：
+            soup = BeautifulSoup('字符串类型/字节类型','lxml')
+
+    (1)直接调用标签查找
+        soup.div  soup.li
+    (2)获取属性
+        soup.a['href']   soup.a['title']   soup.a.attrs(获取所有的属性，返回字典)
+    (3)获取内容
+        print(soup.a.text)
+        print(soup.a.string)
+        print(soup.a.get_text())
+    (4)find;
+    (5)find_all;
+    (6)select.
+
+
+3.xpass
+
+
+
+
